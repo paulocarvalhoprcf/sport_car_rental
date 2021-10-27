@@ -1,0 +1,9 @@
+<p>teste booking show</p>
+
+<li class="list-group-item">
+      <%= booking.content %>
+      <%= link_to "Remove",
+                  booking_path(booking),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </li>
