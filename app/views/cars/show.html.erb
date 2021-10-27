@@ -7,5 +7,7 @@
       <p> Price/day: <strong>$ <%= @car.price %></strong> only.</p>
     </div>
   </div>
+  <%= link_to "Let's search for a date", new_car_booking_path(@car) %>
+  <%= link_to 'Back to cars', cars_path %>
 </div>
 <br>
