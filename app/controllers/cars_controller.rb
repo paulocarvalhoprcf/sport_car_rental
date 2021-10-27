@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :destroy]
+  before_action :set_car, only: [:show, :destroy]
 
   def index
     @cars = policy_scope(Car)
