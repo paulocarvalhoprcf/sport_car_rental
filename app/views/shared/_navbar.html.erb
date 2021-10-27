@@ -13,7 +13,11 @@
         <a class="nav-link" href="#">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
+        <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Login', user_session_path %>
+        <% end %>
       </li>
       <li class="nav-item dropdown">
         <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
