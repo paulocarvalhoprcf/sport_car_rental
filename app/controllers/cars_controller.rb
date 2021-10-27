@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :destroy]
+  before_action :set_car, only: [:show, :destroy]
 
   def index
     @cars = policy_scope(Car)
@@ -16,7 +16,7 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-    @car.user = current_user
+    @car.user_id = current_user
     authorize @car
 
     if @car.save
@@ -24,7 +24,6 @@ class CarsController < ApplicationController
     else
       render :new
     end
-    redirect_to car_path(@car)
   end
 
   def destroy
