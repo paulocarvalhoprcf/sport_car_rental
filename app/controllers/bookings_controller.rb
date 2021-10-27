@@ -28,6 +28,7 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:id])
     @booking.car = @car
     @booking.update(booking_params)
+    redirect_to booking_path(@booking)
   end
 
   def destroy
