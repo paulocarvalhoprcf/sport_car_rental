@@ -14,9 +14,9 @@
       </li>
       <li class="nav-item">
         <% if user_signed_in? %>
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete, notice: 'User successfully logged in!' %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
         <% else %>
-          <%= link_to 'Login', user_session_path, notice: 'User successfully logged out!' %>
+          <%= link_to 'Login', user_session_path %>
         <% end %>
       </li>
       <li class="nav-item dropdown">
