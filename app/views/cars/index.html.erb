@@ -1,3 +1,4 @@
+<!-- Revisar links para os carros nos cards -->
 <h1>Showroom</h1>
 
 <div class="container">
@@ -11,3 +12,11 @@
     <div class="card" style="background-image: url(https://source.unsplash.com/user/erondu/cQEz1B0LPFs)">911 GT3</div>
   </div>
 </div>
+
+<p>teste car index</p>
+<ul>
+  <% @cars.each do |car| %>
+    <li><%= link_to car.model, car_path(car) %></li>
+  <% end %>
+</ul>
+<%= link_to 'Back to home', root_path %>

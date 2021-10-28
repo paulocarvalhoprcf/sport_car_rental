@@ -1,2 +1,13 @@
-<p>teste show</p>
-<p><%= @car.model %>, <%= @car.manufacturer %></p>
+<br>
+<div class="container">
+  <div class="card-product">
+    <img src=<%= @car.img_url %> />
+    <div class="card-product-infos">
+      <h2><%= @car.model %>, <%= @car.manufacturer %></h2>
+      <p> Price/day: <strong>$ <%= @car.price %></strong> only.</p>
+    </div>
+  </div>
+  <%= link_to "Let's search for a date", new_car_booking_path(@car) %>
+  <%= link_to 'Back to cars', cars_path %>
+</div>
+<br>
