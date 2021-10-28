@@ -1,4 +1,15 @@
-<p>teste booking index</p>
-
-
-
+<div>
+  <h1>Bookings for <%= Car.find(@booking.first.car_id).model %></h1>
+</div>
+<div class="container">
+  <br>
+  <div class="cards">
+    <% @booking.each do |bkng| %>
+    <div class="card-product d-block">
+      <p><%= bkng.starting_date %></p>
+      <p><%= bkng.ending_date %></p>
+      <p> Total ($): <%= ((bkng.ending_date - bkng.starting_date).to_f *  bkng.car.price).round(2) %></p>
+    </div>
+    <% end %>
+  </div>
+</div>

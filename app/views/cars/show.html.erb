@@ -11,5 +11,6 @@
     <%= link_to "Let's search for a date", new_car_booking_path(@car) %>
   <% end %>
   <%= link_to 'Back to cars', cars_path %>
+  <%= link_to 'See bookings', car_bookings_path(@car.id) %>
 </div>
 <br>
