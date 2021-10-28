@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @booking = policy_scope(Booking)
+    @booking = policy_scope(Booking).where(car_id: params[:car_id])
   end
 
   def show
