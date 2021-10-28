@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save!
-      redirect_to car_path(@car)
+      redirect_to booking_path(@booking)
     else
       render :new
     end
@@ -46,6 +46,9 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
+
+    authorize @booking
+
     redirect_to car_path(@booking.car)
   end
 
