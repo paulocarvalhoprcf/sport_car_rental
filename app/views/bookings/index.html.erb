@@ -1,5 +1,5 @@
 <div>
-  <h1>Bookings for <%= Car.find(@booking.first.car_id).model %></h1>
+  <h1>Bookings for <%= Car.find(@booking.first.car_id).model if @booking.first.car_id != nil %></h1>
 </div>
 <div class="container">
   <br>
@@ -12,4 +12,7 @@
     </div>
     <% end %>
   </div>
+</div>
+<div>
+  <%= link_to 'Back to cars', cars_path , class: "btn btn-primary"%>
 </div>
