@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <a class="navbar-brand" href="#">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-</a>
+  <a class="navbar-brand" href="/">
+    <%= image_tag "blue_car_logo.png", alt: "app-logo", class: 'bg-transparent'%>
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,25 +9,25 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <li>
-          <% if user_signed_in? %>
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-          <% else %>
-            <%= link_to 'Login', user_session_path %>
-          <% end %>
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link"%>
         </li>
-      </li>
-      <li class="nav-item dropdown">
+      <% else %>
+        <li class="nav-item active">
+            <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+            <%= link_to 'Login', user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+      <%# <li class="nav-item dropdown">
         <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/paulocarvalhprcf" /> %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-        </div>
-      </li>
+        <%# <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> %>
+          <%# <a class="dropdown-item" href="#">Action</a> %>
+          <%# <a class="dropdown-item" href="#">Another action</a> %>
+        <%# </div> %>
+      <%# </li> %>
     </ul>
   </div>
 </div>
