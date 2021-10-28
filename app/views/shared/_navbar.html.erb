@@ -13,11 +13,13 @@
         <a class="nav-link" href="#">Sign Up</a>
       </li>
       <li class="nav-item">
-        <% if user_signed_in? %>
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to 'Login', user_session_path %>
-        <% end %>
+        <li>
+          <% if user_signed_in? %>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to 'Login', user_session_path %>
+          <% end %>
+        </li>
       </li>
       <li class="nav-item dropdown">
         <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/paulocarvalhprcf" /> %>
