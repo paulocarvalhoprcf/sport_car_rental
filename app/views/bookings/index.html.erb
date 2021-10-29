@@ -1,6 +1,6 @@
 <div>
-  <%# <h1>Your Bookings for <%=Car.find(@booking.first.car_id).model if Car.find(@booking.first.car_id).model != nil%></h1> %>
-  <%if Car.find(@booking.first.car_id).model != nil%>
+  <%# <h1>Your Bookings for <%=Car.find(@booking.first.car_id).model if Car.find(@booking.first.car_id).model != nil%></h1>
+  <%if Booking.where(car_id: params[:car_id]).first != nil%>
     <h1>Your Bookings for <%=Car.find(@booking.first.car_id).model %></h1>
   <% else %>
     <h1>You don't have a booking for this car yet</h1>
