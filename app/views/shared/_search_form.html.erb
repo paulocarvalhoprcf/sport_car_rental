@@ -1,0 +1,8 @@
+<%= form_tag cars_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "inline-form",
+    placeholder: "Find a car"
+  %>
+  <%= submit_tag "Search", class: "btn btn-gradient" %>
+<% end %>
