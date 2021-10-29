@@ -34,6 +34,9 @@ gem 'simple_form'
 gem 'devise'
 gem 'pundit'
 
+gem 'validates_timeliness', '~> 6.0.0.alpha1'
+
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
