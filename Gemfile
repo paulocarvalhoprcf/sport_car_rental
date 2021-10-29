@@ -35,6 +35,9 @@ gem 'devise'
 gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 
+gem 'validates_timeliness', '~> 6.0.0.alpha1'
+
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
