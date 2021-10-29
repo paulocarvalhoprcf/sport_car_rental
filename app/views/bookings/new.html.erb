@@ -1,5 +1,7 @@
 <div class="container justify-content-center">
-  <span>
-    <%= render 'shared/new_booking' %>
-  </span>
+  <div class="card-booking" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=@car.img_url%>)">
+    <div class="card-booking-form" >
+      <%= render 'shared/new_booking' %>
+    </div>
+  </div>
 </div>
