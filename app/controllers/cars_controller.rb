@@ -5,7 +5,7 @@ class CarsController < ApplicationController
     @cars = policy_scope(Car)
 
     if params[:query].present?
-      @cars = Car.where(model: params[:query])
+      @cars = Car.search_by_model_and_manufacturer(params[:query])
     else
       @cars = Car.all
     end
