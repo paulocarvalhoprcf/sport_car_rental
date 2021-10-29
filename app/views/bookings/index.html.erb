@@ -13,7 +13,10 @@
     <div class="card-product d-block">
       <p><%= bkng.starting_date %></p>
       <p><%= bkng.ending_date %></p>
-      <p> Total ($): <%= ((bkng.ending_date - bkng.starting_date).to_f *  bkng.car.price).round(2) %></p>
+      <span>
+      <h6> Total ($): <%= ((bkng.ending_date - bkng.starting_date).to_f *  bkng.car.price).round(2) %></h6>
+      <p><%= link_to "Delete", booking_path(bkng), method: :delete, data: { confirm: "Are you sure?" } %></p>
+      <p><%= link_to "Update", edit_booking_path(bkng), data: { confirm: "Are you sure?" } %> </p>
     </div>
     <% end %>
   </div>
