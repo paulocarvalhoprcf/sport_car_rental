@@ -33,6 +33,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'pundit'
+gem 'pg_search', '~> 2.3.0'
 
 gem 'validates_timeliness', '~> 6.0.0.alpha1'
 
