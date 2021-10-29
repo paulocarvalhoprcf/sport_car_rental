@@ -3,6 +3,12 @@ class CarsController < ApplicationController
 
   def index
     @cars = policy_scope(Car)
+
+    if params[:query].present?
+      @cars = Car.where(model: params[:query])
+    else
+      @cars = Car.all
+    end
   end
 
   def show
