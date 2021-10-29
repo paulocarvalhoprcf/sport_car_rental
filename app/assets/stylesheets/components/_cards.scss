@@ -5,25 +5,28 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 25px;
+  grid-gap: 45px;
   flex-grow: 2;
   align-items: stretch;
   margin-bottom: 10px;
 }
 
 .card {
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-position-y: 0px;
   height: 230px;
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(224,222,222,0.7);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 22px;
+  font-size: 17px;
   color: white;
   font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  text-shadow: 0 0 10px rgba(0, 0, 0,0.7);
+  border: solid rgb(102, 102, 102) 1px;
 }
 
 .card-title {
