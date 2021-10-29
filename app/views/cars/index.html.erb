@@ -1,17 +1,15 @@
-<!-- Revisar links para os carros nos cards -->
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(https://source.unsplash.com/user/erondu/c-NEiPIxpYI);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(<%=image_path 'mustang_home.jpg'%>);">
 <div class="container d-block">
-  <h1 class="justify-content-center">Showroom</h1>
+  <h1 class="d-flex justify-content-center">Showroom</h1>
+  <br>
   <div class="cards">
-    <a class="card" href='cars/12' style="background-image: url(https://source.unsplash.com/user/erondu/WBsl72esyVo)">Ferrari 458 Italia</a>
-
-    <a class="card" href='cars/14' style="background-image: url(https://source.unsplash.com/user/erondu/iBLOPHwOHJE)">Aventador</a>
-
-    <a class="card" href='cars/13' style="background-image: url(https://source.unsplash.com/user/erondu/kGCvCx5qyjM)">GT500 Cobra</a>
-
-    <a class="card" href='cars/15' style="background-image: url(https://source.unsplash.com/user/erondu/cQEz1B0LPFs)">911 GT3</a>
+    <% @cars.each do |car| %>
+      <a class="card" href="cars/<%= car.id %>" style="background-image: url(<%= car.img_url %>)"><%= car.model %></a>
+    <% end %>
   </div>
   <br>
-  <%= link_to 'Back to home', root_path, class: "btn btn-primary" %>
+  <p class="d-flex justify-content-center">
+    <%= link_to 'Back to home', root_path, class: "btn btn-gradient" %>
+  </p>
 </div>
 <br>
