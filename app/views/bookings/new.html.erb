@@ -1,6 +1,5 @@
-<p>teste booking new</p>
-<%= simple_form_for [ @car, @booking ] do |f| %>
-  <%= f.input :starting_date, as: :date %>
-  <%= f.input :ending_date, as: :date %>
-  <%= f.submit "Submit a booking date", class: "btn btn-gradient" %>
-<% end %>
+<div class="container justify-content-center">
+  <span>
+    <%= render 'shared/new_booking' %>
+  </span>
+</div>

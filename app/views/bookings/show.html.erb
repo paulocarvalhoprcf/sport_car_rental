@@ -1,11 +1,15 @@
-<h1>Your Booking</h1>
-<div class="container">
-  <ul class="list-group-item">
-    <li>
-      <h3> Car: <%= @booking.car.model %></h3>
-      <p>From: <%= @booking.starting_date %></p>
-        <p>To: <%= @booking.ending_date %></p>
-        <p> Total ($): <%= ((@booking.ending_date - @booking.starting_date).to_f *  @booking.car.price).round(2) %></p>
+<br>
+<div class="container justify-content-center">
+  <h1>Your Booking</h1>
+</div>
+<br>
+<div class="container justify-content-center">
+  <div class="row">
+    <div class="col">
+      <div class="list-group-item">
+        <h3 class="d-flex justify-content-center"> Car: <%= @booking.car.model %></h3>
+        <p class="d-flex justify-content-center">From: <%= @booking.starting_date %>  To: <%= @booking.ending_date %></p>
+        <p class="d-flex justify-content-center"> Total ($): <%= ((@booking.ending_date - @booking.starting_date).to_f *  @booking.car.price).round(2) %></p>
         <%= link_to "Delete date",
                     booking_path(@booking),
                     method: :delete,
@@ -14,6 +18,7 @@
                     edit_booking_path(@booking),
                     data: { confirm: "Are you sure?" }, class: "btn btn-gradient" %>
         <%= link_to 'Back to cars', cars_path , class: "btn btn-gradient"%>
-    </li>
-  </ul>
+      </div>
+    </div>
+  </div>
 </div>
