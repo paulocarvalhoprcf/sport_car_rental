@@ -12,7 +12,7 @@ Car.destroy_all
 puts 'Creating 4 sport cars...'
 
 ferrari_458 = { model: 'Ferrari 458 Italia', manufacturer: 'Ferrari', price: rand(1500..5000), year: '2015', img_url: "https://source.unsplash.com/user/erondu/WBsl72esyVo"}
-gt_500 = { model: 'Shelby GT500 Cobra', manufacturer: 'Ford', price: rand(1500..5000), year: '2020', img_url: "https://source.unsplash.com/user/erondu/fYGKyASSuk0"}
+gt_500 = { model: 'Mustang Shelby GT500 Cobra', manufacturer: 'Ford', price: rand(1500..5000), year: '2020', img_url: "https://source.unsplash.com/user/erondu/fYGKyASSuk0"}
 aventador = { model: 'Aventador LP780-4', manufacturer: 'Lamborghini' , price: rand(1500..5000), year: '2021', img_url: "https://source.unsplash.com/user/erondu/I70_S2OkWM4"}
 porsche_911GT3 = { model: 'Porsche 911 GT3 Cup', manufacturer: 'Porsche', price: rand(1500..5000), year: '2021', img_url: "https://source.unsplash.com/user/erondu/pjxe3p4u5aI" }
 mercedes_amg = { model: 'Mercedes Amg GT', manufacturer: 'Mercedes', price: rand(1500..5000), year: '2015', img_url: "https://cdn.pixabay.com/photo/2017/03/27/14/56/auto-2179220_1280.jpg"}

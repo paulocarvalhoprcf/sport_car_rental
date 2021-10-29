@@ -5,7 +5,11 @@ class CarsController < ApplicationController
     @cars = policy_scope(Car)
 
     if params[:query].present?
-      @cars = Car.search_by_model_and_manufacturer(params[:query])
+      if Car.search_by_model_and_manufacturer(params[:query]).first.nil?
+        @cars = ""
+      else
+        @cars = Car.search_by_model_and_manufacturer(params[:query])
+      end
     else
       @cars = Car.all
     end
@@ -44,5 +48,9 @@ class CarsController < ApplicationController
 
   def car_params
     params.require(:car).permit(:model, :manufacturer, :year, :img_url, :price)
+  end
+
+  def query_nil?
+    Car.search_by_model_and_manufacturer(params[:query]).first.nil?
   end
 end
