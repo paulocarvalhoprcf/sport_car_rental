@@ -4,11 +4,11 @@
     <p><%= render "/shared/search_form" %></p>
   </div>
   <br>
-  <h1 class="d-flex justify-content-center">Showroom</h1>
+  <h1 class="d-flex justify-content-center">Choose your sport car</h1>
   <br>
   <div class="cards">
     <% @cars.each do |car| %>
-      <a class="card" href="cars/<%= car.id %>" style="background-image: url(<%= car.img_url %>)"><%= car.model %></a>
+      <a class="card" href="cars/<%= car.id %>" style="background-image: url(<%= car.img_url %>)"></a>
     <% end %>
   </div>
   <br>
