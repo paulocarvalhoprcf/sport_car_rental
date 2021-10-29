@@ -29,6 +29,31 @@
   border: solid rgb(102, 102, 102) 1px;
 }
 
+.card-booking {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-position-y: 0px;
+  height: 700px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(224,222,222,0.7);
+  display: flex;
+  justify-content: space-around;
+  font-size: 17px;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0, 0, 0,0.7);
+  border: solid rgb(102, 102, 102) 1px;
+  position: absolute;
+  margin: 15px;
+}
+
+.card-booking-form {
+  position: relative;
+  top: 20px;
+  padding: 10px;
+}
+
 .card-title {
   font-size: 20px;
   color: black;
