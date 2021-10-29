@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  }
+}
 
 .cards {
   display: grid;
@@ -8,6 +8,7 @@
   grid-gap: 25px;
   flex-grow: 2;
   align-items: stretch;
+  margin-bottom: 10px;
 }
 
 .card {
@@ -34,6 +35,7 @@
   font-size: 10px;
   color: black;
   text-shadow: 0 0 0;
+  text-decoration: none;
 }
 .card:hover {
   color: rgba(226, 223, 223, 0.86);

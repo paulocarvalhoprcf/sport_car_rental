@@ -1,5 +1,10 @@
 <div>
-  <h1>Bookings for <%= Car.find(@booking.first.car_id).model if @booking.first.car_id != nil %></h1>
+  <%# <h1>Your Bookings for <%=Car.find(@booking.first.car_id).model if Car.find(@booking.first.car_id).model != nil%></h1> %>
+  <%if Car.find(@booking.first.car_id).model != nil%>
+    <h1>Your Bookings for <%=Car.find(@booking.first.car_id).model %></h1>
+  <% else %>
+    <h1>You don't have a booking for this car yet</h1>
+  <% end %>
 </div>
 <div class="container">
   <br>
@@ -17,5 +22,5 @@
   </div>
 </div>
 <div>
-  <%= link_to 'Back to cars', cars_path , class: "btn btn-primary"%>
+  <%= link_to 'Back to cars', cars_path , class: "btn btn-gradient"%>
 </div>
