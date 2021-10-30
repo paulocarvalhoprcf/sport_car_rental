@@ -12,22 +12,25 @@
       <% if user_signed_in? %>
         <% if Booking.where(user_id: current_user).first == nil%>
           <li class="nav-item active">
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link"%>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-gradient"%>
           </li>
         <% else %>
           <li class="nav-item active">
-            <%= link_to 'My Bookings', booking_path(Booking.where(user_id: current_user).last.id), class: "nav-link"%>
+            <%= link_to 'My Bookings', booking_path(Booking.where(user_id: current_user).last.id), class: "btn btn-gradient"%>
+            <% if current_user.admin? %>
+              <%= link_to 'New Cars', new_car_path, class: "btn btn-gradient" %>
+            <% end %>
           </li>
           <li class="nav-item active">
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link"%>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-gradient"%>
           </li>
         <% end %>
       <% else %>
         <li class="nav-item active">
-            <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link" %>
+            <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-gradient" %>
         </li>
         <li class="nav-item active">
-            <%= link_to 'Login', user_session_path, class: "nav-link" %>
+            <%= link_to 'Login', user_session_path, class: "btn btn-gradient" %>
         </li>
       <% end %>
       <%# <li class="nav-item dropdown">

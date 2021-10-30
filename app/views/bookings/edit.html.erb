@@ -4,5 +4,6 @@
     <%= f.input :ending_date, as: :date %>
     <%#= f.association :car %>
     <%= f.submit "Submit a booking date", method: :update, class: "btn btn-gradient" %>
+    <%= link_to 'Back to cars', cars_path, class: "btn btn-gradient" %>
   <% end %>
 </div>
