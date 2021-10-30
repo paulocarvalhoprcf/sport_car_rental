@@ -10,18 +10,18 @@ class CarPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    is_admin?
   end
 
   def create?
-    true
+    is_admin?
   end
 
   private
 
-  def is_owner_or_admin?
+  def is_admin?
     # @restaurant => record
     # current_user => user
-    record.user_id == user || user.admin # O mesmo que @restaurant.user == current_user
+    user.admin # O mesmo que @restaurant.user == current_user
   end
 end
