@@ -6,9 +6,13 @@
       <div class="card-car-infos">
         <div>
           <h2><%= @car.model %></h2>
-          <p>Short description here!</p>
         </div>
-        <h3 class="card-car-pricing">Price per day: <strong>$ <%= @car.price %></strong> only.</h3>
+        <div>
+          <h3 class="card-car-pricing">Price per day: <strong>$ <%= @car.price %></strong> only.</h3>
+        </div>
+      </div>
+      <div>
+        <p><%= @car.short_description %></p>
       </div>
     </div>
   </div>
