@@ -1,24 +1,21 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(<%=image_path 'mustang_home.jpg'%>);">
-<div class="container d-block">
-  <div class="row d-flex justify-content-center">
-    <p><%= render "/shared/search_form" %></p>
-  </div>
-  <br>
-  <h1 class="d-flex justify-content-center">Choose your sport car</h1>
-  <br>
-  <div class="cards">
-    <% if @cars == "" %>
-      <h1>"Sorry, <%= params[:query] %> not available"</h1>
-    <% else %>
-      <% @cars.each do |car| %>
-        <a class="card" href="cars/<%= car.id %>" style="background-image: url(<%= car.img_url %>)"></a>
+<div><%= render 'shared/banner' %>
+  <div class='container d-block'>
+    <div class='form-inline' <%= render '/shared/search_form' %>></div>
+    <h1 class="d-flex justify-content-center">Choose your sport car</h1>
+    <br>
+    <div class="cards">
+      <% if @cars == "" %>
+        <h1>"Sorry, <%= params[:query] %> is not available"</h1>
+      <% else %>
+        <% @cars.each do |car| %>
+          <a class="card" href="cars/<%= car.id %>" style="background-image: url(<%= car.img_url %>)"></a>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+    <br>
+    <p class="d-flex justify-content-center">
+      <%= link_to 'Back to home', root_path, class: "btn btn-gradient" %>
+    </p>
   </div>
-  <br>
-  <p class="d-flex justify-content-center">
-    <%= link_to 'Back to home', root_path, class: "btn btn-gradient" %>
-  </p>
 </div>
-<br>
