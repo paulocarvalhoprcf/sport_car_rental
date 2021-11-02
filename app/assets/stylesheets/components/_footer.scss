@@ -1,11 +1,11 @@
 .footer {
-  background: #d3d1d1;
+  background:#161425;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 50px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  color: rgba(233, 227, 227, 0.3);
   margin-top: auto
 }
 .footer-links {
@@ -13,15 +13,18 @@
   align-items: center;
 }
 .footer-links a {
-  color: black;
+  color:  white;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  opacity: 1;
+  opacity: 0.7;
+}
+.footer-copyright {
+  font: 15px;
 }
 .footer .fa-car {
   color: #D23333;
-}
+ }
