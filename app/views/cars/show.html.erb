@@ -22,6 +22,7 @@
     <%= link_to 'Back to cars', cars_path, class: "btn btn-gradient" %>
     <% if current_user.admin? %>
       <%= link_to 'See bookings', car_bookings_path(@car.id), class: "btn btn-gradient" %>
+      <%= link_to 'Delete Car', car_path(@car.id), method: :delete, data: { confirm: "Are you sure do you want to delete this car?" }, class: "btn btn-gradient" %>
     <% end %>
   </div>
 </div>
