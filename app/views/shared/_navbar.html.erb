@@ -30,12 +30,15 @@
           </li>
         <% end %>
       <% else %>
-        <li class="nav-item active">
-            <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-gradient" %>
-        </li>
-        <li class="nav-item active">
-            <%= link_to 'Login', user_session_path, class: "btn btn-gradient" %>
-        </li>
+        <% if controller_name == 'sessions' || controller_name == 'registrations' %>
+        <% else %>
+          <li class="nav-item active">
+              <%= link_to 'Sign Up Here!', new_user_registration_path, class: "btn btn-gradient" %>
+          </li>
+          <li class="nav-item active">
+              <%= link_to 'Login', user_session_path, class: "btn btn-gradient" %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
   </div>
