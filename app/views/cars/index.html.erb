@@ -6,17 +6,21 @@
 
   <h1 class="d-flex justify-content-center" id="cars">Choose your sport car</h1>
   <br>
-  <div class="d-flex ml-4 mr-4">
-    <div class="cards">
-      <% if @cars == "" %>
-        <h1>"Sorry, <%= params[:query] %> is not available"</h1>
-      <% else %>
-        <% @cars.each do |car| %>
-          <a class="card" href="cars/<%= car.id %>" style="background-image: url(<%= car.img_url %>)"></a>
-        <% end %>
+    <% if @cars == "" %>
+      <div class="row justify-content-center">
+          <div class="alert alert-danger" role="alert">
+            "Sorry, <%= params[:query] %> is not available"
+          </div>
+      </div>
+    <% else %>
+      <div class="d-flex ml-4 mr-4">
+        <div class="cards">
+            <% @cars.each do |car| %>
+              <a class="card" href="cars/<%= car.id %>" style="background-image: url(<%= car.img_url %>)"></a>
+            <% end %>
+        </div>
+      </div>
       <% end %>
-    </div>
-  </div>
     <br>
   <p class="d-flex justify-content-center">
     <%= link_to 'Back to home', root_path, class: "btn btn-gradient" %>
