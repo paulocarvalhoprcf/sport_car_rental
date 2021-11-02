@@ -14,13 +14,11 @@
   </div>
   <br>
   <div class='button-links'>
-  <%= link_to "Search for a date", new_car_booking_path(@car), class: "btn btn-gradient" %>
-  <% if policy(Car).create? %>
-  <% end %>
-  <%= link_to 'Back to cars', cars_path, class: "btn btn-gradient" %>
-  <% if current_user.admin? %>
-    <%= link_to 'See bookings', car_bookings_path(@car.id), class: "btn btn-gradient" %>
-  <% end %>
+    <%= link_to "Search for a date", new_car_booking_path(@car), class: "btn btn-gradient" %>
+    <%= link_to 'Back to cars', cars_path, class: "btn btn-gradient" %>
+    <% if current_user.admin? %>
+      <%= link_to 'See bookings', car_bookings_path(@car.id), class: "btn btn-gradient" %>
+    <% end %>
   </div>
 </div>
 <br>
