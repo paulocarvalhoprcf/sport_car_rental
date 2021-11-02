@@ -1,8 +1,10 @@
+<div>
+  <h1 class="align-item-center">Edit your booking date</h1>
+</div>
 <div class="container">
   <%= simple_form_for [ @car, @booking ] do |f| %>
     <%= f.input :starting_date, as: :date %>
     <%= f.input :ending_date, as: :date %>
-    <%#= f.association :car %>
     <%= f.submit "Submit a booking date", method: :update, class: "btn btn-gradient" %>
     <%= link_to 'Back to cars', cars_path, class: "btn btn-gradient" %>
   <% end %>

@@ -47,7 +47,7 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:model, :manufacturer, :year, :img_url, :price)
+    params.require(:car).permit(:model, :manufacturer, :year, :img_url, :price, :short_description)
   end
 
   def query_nil?
