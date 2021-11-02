@@ -1,9 +1,12 @@
+<div class="banner" id="car" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url(<%=image_path 'mustang_home.jpg'%>);">
 
-<div><%= render 'shared/banner' %>
   <div class='container d-block'>
     <div class='form-inline' <%= render '/shared/search_form' %>></div>
-    <h1 class="d-flex justify-content-center">Choose your sport car</h1>
-    <br>
+  </div>
+
+  <h1 class="d-flex justify-content-center" id="cars">Choose your sport car</h1>
+  <br>
+  <div class="d-flex ml-4 mr-4">
     <div class="cards">
       <% if @cars == "" %>
         <h1>"Sorry, <%= params[:query] %> is not available"</h1>
@@ -13,9 +16,9 @@
         <% end %>
       <% end %>
     </div>
-    <br>
-    <p class="d-flex justify-content-center">
-      <%= link_to 'Back to home', root_path, class: "btn btn-gradient" %>
-    </p>
   </div>
+    <br>
+  <p class="d-flex justify-content-center">
+    <%= link_to 'Back to home', root_path, class: "btn btn-gradient" %>
+  </p>
 </div>
