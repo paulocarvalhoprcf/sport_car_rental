@@ -6,20 +6,22 @@
       <div class="card-car-infos">
         <div>
           <h2><%= @car.model %></h2>
-          <p>Short description here!</p>
         </div>
-        <h3 class="card-car-pricing">Price per day: <strong>$ <%= @car.price %></strong> only.</h3>
+        <div>
+          <h3 class="card-car-pricing">Price per day: <strong>$ <%= @car.price %></strong> only.</h3>
+        </div>
+      </div>
+      <div>
+        <p><%= @car.short_description %></p>
       </div>
     </div>
   </div>
   <br>
   <div class='button-links'>
-  <% if policy(Car).create? %>
     <%= link_to "Search for a date", new_car_booking_path(@car), class: "btn btn-gradient" %>
-  <% end %>
-  <%= link_to 'Back to cars', cars_path, class: "btn btn-gradient" %>
-  <% if current_user.admin? %>
-    <%= link_to 'See bookings', car_bookings_path(@car.id), class: "btn btn-gradient" %>
-  <% end %>
+    <%= link_to 'Back to cars', cars_path, class: "btn btn-gradient" %>
+    <% if current_user.admin? %>
+      <%= link_to 'See bookings', car_bookings_path(@car.id), class: "btn btn-gradient" %>
+    <% end %>
   </div>
 </div>
