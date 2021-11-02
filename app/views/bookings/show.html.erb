@@ -10,7 +10,7 @@
         <div class="list-group-item">
           <h3 class="d-flex justify-content-center"><%= booking.car.model %></h3>
           <p class="d-flex justify-content-center">From: <%= booking.starting_date %>  To: <%= booking.ending_date %></p>
-          <p class="d-flex justify-content-center"> Total ($): <%= ((booking.ending_date - booking.starting_date).to_f *  booking.car.price).round(2) %></p>
+          <p class="d-flex justify-content-center"> Total: $<%= ((booking.ending_date - booking.starting_date).to_i * booking.car.price).round(2) %>.00</p>
           <%= link_to "Delete date",
                       booking_path(booking),
                       method: :delete,
