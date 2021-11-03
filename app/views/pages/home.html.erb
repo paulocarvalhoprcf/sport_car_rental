@@ -1,14 +1,19 @@
-<div>
-  <%= render 'shared/banner' %>
+<div class="banner" style="background-image: url(<%=image_path 'mustang_home.jpg'%>);">
   <div class="d-flex justify-content-center">
-    <h3 class="d-flex justify-content-center" id="home_secondary">Drive the <span class="text-danger bg-gradient" id="banner-typed-text"></span> of your dreams!</h3>
-  </div>
-  <div class="d-block">
+    <h3 class="d-flex justify-content-center" id="home_secondary">Drive the <span class="text-danger ml-2 mr-2 bg-gradient" id="banner-typed-text"></span> of your dreams!</h3>
     <h1 class="d-flex justify-content-center" id='home'>a new experience on car rental</h1>
-  </div>
-  <br>
-  <div class="d-block">
-    <p class="d-flex justify-content-center"><%= link_to 'find your car', cars_path, class: 'btn btn-gradient' %></p>
+    <p class="d-flex justify-content-center" id="home-btn"><%= link_to 'find your car', cars_path, class: 'btn btn-gradient', id: 'button' %></p>
   </div>
 </div>
 <%= render 'shared/footer' %>
+
+<script>
+
+  const audio = new Audio('/assets/engine2.mp3');
+  const button = document.querySelector('#button');
+  console.log(button);
+  button.addEventListener('click', (event) => {
+    audio.play();
+  });
+
+</script>
