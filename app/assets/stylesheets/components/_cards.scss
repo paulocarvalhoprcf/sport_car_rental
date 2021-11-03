@@ -63,14 +63,14 @@
   text-shadow: 0 0 0;
 }
 .card-text {
-  font-size: 10px;
+  font-size: 15px;
   color: black;
   text-shadow: 0 0 0;
   text-decoration: none;
 }
-.card:hover {
-  color: rgba(226, 223, 223, 0.86);
-}
+// .card:hover {
+//   color: rgba(226, 223, 223, 0.86);
+// }
 
 @media(max-width: 992px) {
   .cards {
@@ -82,4 +82,22 @@
   .cards {
     grid-template-columns: 1fr;
   }
+}
+
+.card-car-bookings {
+  height: 220px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 3px rgba(224,222,222,0.7);
+  border: solid rgb(102, 102, 102) 1px;
+  margin: 10px;
+  background-color: white;
+  // background-position-y: 0px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-around;
+  // flex-grow: 1;
+  // font-size: 17px;
+  // color: white;
+  // font-weight: bolder;
+  // text-shadow: 0 0 10px rgba(0, 0, 0,0.7);
 }

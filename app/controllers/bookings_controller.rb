@@ -3,6 +3,11 @@ class BookingsController < ApplicationController
     @booking = policy_scope(Booking).where(car_id: params[:car_id])
   end
 
+  def all
+    @bookings = Booking.order(car_id: :asc)
+    authorize @bookings
+  end
+
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
@@ -20,7 +25,7 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:car_id])
     @booking.car = @car
     @booking.user = current_user
-
+    @booking.invoice_price = (@booking.ending_date - @booking.starting_date).to_i * @booking.car.price
     authorize @booking
 
     if @booking.save
