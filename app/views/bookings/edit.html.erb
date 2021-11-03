@@ -1,11 +1,7 @@
-<div>
-  <h1 class="align-item-center">Edit your booking date</h1>
-</div>
-<div class="container">
-  <%= simple_form_for [ @car, @booking ] do |f| %>
-    <%= f.input :starting_date, as: :date %>
-    <%= f.input :ending_date, as: :date %>
-    <%= f.submit "Submit a booking date", method: :update, class: "btn btn-gradient" %>
-    <%= link_to 'Back to cars', cars_path, class: "btn btn-gradient" %>
-  <% end %>
+<div class="container justify-content-center">
+  <div class="card-booking" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=@booking.car.img_url%>)">
+    <div class="card-booking-form" >
+      <%= render 'shared/edit_booking' %>
+    </div>
+  </div>
 </div>

@@ -5,11 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# require 'json'
+# require 'open-uri'
+
 puts 'Cleaning database'
 Booking.destroy_all
 Car.destroy_all
 
-puts 'Creating 4 sport cars...'
+# url = "https://private-anon-34b60c4048-carsapi1.apiary-mock.com/cars"
+# car_serialized = URI.open(url).read
+# car_json = JSON.parse(car_serialized)
+# car_json.each do |c|
+#   car = Car.create!(
+#     model: c['model'],
+#     manufacturer: c["make"],
+#     price: c["price"]/100,
+#     year: c["year"].to_s,
+#     img_url: c['img_url'],
+#     short_description: c['horsepower'].to_s
+#   )
+#   puts "Created #{car.model}"
+# end
+# puts "#{car_json.count} sport cars created!"
 
 ferrari_458 = { model: 'Ferrari 458 Italia', manufacturer: 'Ferrari', price: rand(1500..5000), year: '2015', img_url: "https://source.unsplash.com/user/erondu/WBsl72esyVo", short_description: "The 458 is powered by a 4,497 cc (4.5 L; 274.4 cu in) engine of the Ferrari/Maserati F136 V8 family, generating a power output of 570 PS (419 kW; 562 hp) at 9,000 rpm (redline) and 540 N⋅m (398 lb⋅ft) of torque at 6,000 rpm with 80% torque available at 3,250 rpm. The engine features direct fuel injection, which is a first for Ferrari mid-engine setups in its road cars." }
 gt_500 = { model: 'Mustang Shelby GT500 Cobra', manufacturer: 'Ford', price: rand(1500..5000), year: '2020', img_url: "https://source.unsplash.com/user/erondu/fYGKyASSuk0", short_description: "The 2020 GT500 was unveiled at the January 2019 North American International Auto Show in Detroit. It is powered by a hand-built 5.2-liter Predator aluminum-alloy V8 engine with a 2.65-liter roots-type supercharger. The Shelby GT500 produces 760 hp (567 kW; 771 PS) and 625 lb⋅ft (847 N⋅m) of torque." }

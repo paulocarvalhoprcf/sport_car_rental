@@ -20,4 +20,16 @@ class BookingPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def all?
+    is_admin?
+  end
+
+  private
+
+  def is_admin?
+    # @restaurant => record
+    # current_user => user
+    user.admin # O mesmo que @restaurant.user == current_user
+  end
 end

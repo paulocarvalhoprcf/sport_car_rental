@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3">
+      <% @bookings.each do |booking| %>
+    <div class="col mb-4">
+        <div class="card w-100">
+          <div class="card-body">
+            <h5 class="card-title"><%= booking.car.model %></h5>
+            <p class="card-text">User: <%= booking.user.email %></p>
+            <p class="card-text">starting date:<%= booking.starting_date %></p>
+            <p class="card-text">Ending date: <%= booking.ending_date %></p>
+          </div>
+          <div class="card-footer">
+            <div class="row">
+              <div class="col">
+                Total: $ <%= booking.invoice_price %>.00
+              </div>
+              <div class="col">
+                <%= link_to 'See Car Bookings', car_bookings_path(booking.car)  %>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      <% end %>
+  </div>
+</div>
