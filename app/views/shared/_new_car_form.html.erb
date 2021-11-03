@@ -1,55 +1,59 @@
-<h1 style="text-align-center">Add a New Car</h1>
-  <div class="container" style="item-align-center">
-    <%= simple_form_for(@car) do |f| %>
-      <form class="needs-validation" novalidate>
-        <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <%= f.input :model, class: "form-control", placeholder: "Model" %>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <%= f.input :manufacturer, class: "form-control", placeholder: "Manufacturer" %>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <%= f.input :year, class: "form-control", placeholder: "Year" %>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
+
+<div class="row justify-content-center">
+  <h1>Add a New Car</h1>
+</div>
+
+<%= simple_form_for(@car) do |f| %>
+  <form class="needs-validation" novalidate>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <%= f.input :model, class: "form-control", placeholder: "Model" %>
+        <div class="valid-feedback">
+          Looks good!
         </div>
-        <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <%= f.input :img_url, class: "form-control", placeholder: "URL image" %>
-            <div class="invalid-feedback">
-              Please provide a valid URL image.
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <%= f.input :price, class: "form-control", placeholder: "Price"%>
-            <div class="invalid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <%= f.input :short_description, class: "form-control", placeholder: "Short description"%>
-            <div class="invalid-feedback">
-              Please provide a short description.
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <%= f.input :photo, as: :file, class: "form-control" %>
-            <div class="invalid-feedback">
-              Please attache a car image.
-            </div>
-          </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <%= f.input :manufacturer, class: "form-control", placeholder: "Manufacturer" %>
+        <div class="valid-feedback">
+          Looks good!
         </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <%= f.input :year, class: "form-control", placeholder: "Year" %>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <%= f.input :img_url, class: "form-control", placeholder: "URL image" %>
+        <div class="invalid-feedback">
+          Please provide a valid URL image.
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <%= f.input :price, class: "form-control", placeholder: "Price"%>
+        <div class="invalid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <%= f.input :short_description, class: "form-control", placeholder: "Short description"%>
+        <div class="invalid-feedback">
+          Please provide a short description.
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <%= f.input :photo, as: :file, class: "form-control" %>
+        <div class="invalid-feedback">
+          Please attache a car image.
+        </div>
+      </div>
+    </div>
+    <div class="row">
         <button class="btn btn-gradient" type="submit">Create car</button>
         <%= link_to 'Back to cars', cars_path, class: "btn btn-gradient" %>
-      </form>
-    <% end %>
-  </div>
+    </div>
+  </form>
+<% end %>

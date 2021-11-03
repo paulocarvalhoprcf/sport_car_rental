@@ -12,10 +12,10 @@
           <div class="card-footer">
             <div class="row">
               <div class="col">
-                <p >Total: $ <%= booking.invoice_price %>.00</p>
+                Total: $ <%= booking.invoice_price %>.00
               </div>
               <div class="col">
-                <p><%= link_to 'See Car Bookings', car_bookings_path(booking.car)  %></p>
+                <%= link_to 'See Car Bookings', car_bookings_path(booking.car)  %>
               </div>
             </div>
           </div>

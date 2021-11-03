@@ -19,17 +19,19 @@
               <p class="card-text">Ending Date: <%= booking.ending_date %></p>
               <span>
               <h6> Total ($): <%= ((booking.ending_date - booking.starting_date).to_i * booking.car.price)%>.00</h6>
+            </div>
+            <div class="card-footer">
               <div class="row">
                 <div class="col">
-                  <p><%= link_to "Delete",
+                  <%= link_to "Delete",
                         booking_path(booking),
                         method: :delete,
-                        data: { confirm: "Are you sure do you want to delete your booking?" }, class: "btn btn-gradient" %></p>
+                        data: { confirm: "Are you sure do you want to delete your booking?" } %>
                 </div>
                 <div class="col">
-                  <p><%= link_to "Update",
+                  <%= link_to "Update",
                         edit_booking_path(booking),
-                        data: { confirm: "Are you sure do you want to edit your booking?" }, class: "btn btn-gradient" %></p>
+                        data: { confirm: "Are you sure do you want to edit your booking?" }%>
                 </div>
               </div>
             </div>

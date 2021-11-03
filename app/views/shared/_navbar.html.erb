@@ -10,35 +10,35 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <% if current_user.admin? %>
-          <li class="nav-item active">
-            <%= link_to 'All Bookings', all_path, class: "btn btn-gradient"%>
+          <li class="nav-link">
+            <%= link_to 'All Bookings', all_path%>
           </li>
-          <li class="nav-item active">
-            <%= link_to 'New Cars', new_car_path, class: "btn btn-gradient" %>
+          <li class="nav-link">
+            <%= link_to 'New Cars', new_car_path %>
           </li>
-          <li class="nav-item active">
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-gradient"%>
+          <li class="nav-link">
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete%>
           </li>
         <% elsif Booking.where(user_id: current_user).first == nil %>
-          <li class="nav-item active">
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-gradient"%>
+          <li class="nav-link">
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete%>
           </li>
         <% else %>
-          <li class="nav-item active">
-            <%= link_to 'My Bookings', booking_path(Booking.where(user_id: current_user).last.id), class: "btn btn-gradient"%>
+          <li class="nav-link">
+            <%= link_to 'My Bookings', booking_path(Booking.where(user_id: current_user).last.id)%>
           </li>
-          <li class="nav-item active">
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-gradient"%>
+          <li class="nav-link">
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete%>
           </li>
         <% end %>
       <% else %>
         <% if controller_name == 'sessions' || controller_name == 'registrations' %>
         <% else %>
-          <li class="nav-item active">
-              <%= link_to 'Sign Up Here!', new_user_registration_path, class: "btn btn-gradient" %>
+          <li class="nav-link">
+              <%= link_to 'Sign Up Here!', new_user_registration_path %>
           </li>
-          <li class="nav-item active">
-              <%= link_to 'Login', user_session_path, class: "btn btn-gradient" %>
+          <li class="nav-link">
+              <%= link_to 'Login', user_session_path %>
           </li>
         <% end %>
       <% end %>
