@@ -1,0 +1,13 @@
+<br>
+<%= simple_form_for [ @car, @booking ] do |f| %>
+  <div class="form-inline justify-items-center">
+    <%= f.input :starting_date, as: :date %>
+    <span></span>
+    <%= f.input :ending_date, as: :date %>
+  </div>
+  <br>
+  <div class="d-flex justify-content-center">
+    <%= f.submit "Submit a booking date", method: :update, class: "btn btn-gradient" %>
+    <%= link_to 'Back to cars', cars_path, class: "btn btn-gradient" %>
+  </div>
+<% end %>
