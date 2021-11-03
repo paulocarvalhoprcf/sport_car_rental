@@ -10,8 +10,20 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
   <body>
+    <button type="button" class="button">
+      Start engine!
+    </button>
+    <script>
+
+      const audio = new Audio('/assets/engine2.mp3');
+      const button = document.querySelector('.button');
+      button.addEventListener('click', (event) => {
+        event.currentTarget.innerText = "Started!"
+        audio.play();
+      });
+
+    </script>
     <%= render 'shared/navbar' %>
     <%= yield %>
   </body>
