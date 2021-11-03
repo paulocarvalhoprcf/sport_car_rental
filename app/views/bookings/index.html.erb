@@ -1,25 +1,41 @@
-<div>
-  <%if Booking.where(car_id: params[:car_id]).first != nil%>
-    <h1>Your Bookings for <%=Car.find(@booking.first.car_id).model %></h1>
-  <% else %>
-    <h1>You don't have a booking for this car yet</h1>
-  <% end %>
-</div>
-<div class="container">
+<div class="container d-block bg-light">
   <br>
-  <div class="cards">
-    <% @booking.each do |bkng| %>
-    <div class="card-product d-block">
-      <p><%= bkng.starting_date %></p>
-      <p><%= bkng.ending_date %></p>
-      <span>
-      <h6> Total ($): <%= ((bkng.ending_date - bkng.starting_date).to_f *  bkng.car.price).round(2) %></h6>
-      <p><%= link_to "Delete", booking_path(bkng), method: :delete, data: { confirm: "Are you sure do you want to delete your booking?" } %></p>
-      <p><%= link_to "Update", edit_booking_path(bkng), data: { confirm: "Are you sure do you want to edit your booking?" } %> </p>
-    </div>
+  <div class="row justify-content-center">
+    <%if Booking.where(car_id: params[:car_id]).first != nil%>
+      <h1>Bookings for <%=Car.find(@booking.first.car_id).model %></h1>
+    <% else %>
+      <h1>There are no bookings for this car</h1>
     <% end %>
   </div>
-</div>
-<div>
-  <%= link_to 'Back to cars', cars_path , class: "btn btn-gradient"%>
+  <br>
+  <div class="container d-flex justify-content-center">
+    <div class="row">
+      <% @booking.each do |bkng| %>
+      <div class="col mb-4">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h6 class="card-title">User: <%= bkng.user.email %></h6>
+              <p class="card-text">Starting Date: <%= bkng.starting_date %></p>
+              <p class="card-text">Ending Date: <%= bkng.ending_date %></p>
+              <span>
+              <h6> Total ($): <%= ((bkng.ending_date - bkng.starting_date).to_f *  bkng.car.price).round(2) %></h6>
+              <div class="row row-cols-2">
+                <div class="col">
+                  <p><%= link_to "Delete", booking_path(bkng), method: :delete, class: "btn btn-gradient", data: { confirm: "Are you sure do you want to delete your booking?" } %></p>
+                </div>
+                <div class="col">
+                  <p><%= link_to "Update", edit_booking_path(bkng), class: "btn btn-gradient", data: { confirm: "Are you sure do you want to edit your booking?" } %> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <div class="row justify-content-center">
+    <%= link_to 'Back to cars', cars_path , class: "btn btn-gradient"%>
+  </div>
+  <br>
 </div>
