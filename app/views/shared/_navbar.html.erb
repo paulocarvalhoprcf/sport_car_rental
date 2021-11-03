@@ -10,9 +10,9 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <% if current_user.admin? %>
-          <form class="form-inline my-2 my-lg-0">
-            <%= render '/shared/search_form' %></p>
-          </form>
+          <%# <form class="form-inline my-2 my-lg-0">
+            <%= render '/shared/search_form' %>
+          <%# </form> %>
           <li class="nav-link">
             <%= link_to 'All Bookings', all_path%>
           </li>
