@@ -10,40 +10,39 @@
   <br>
   <div class="container justify-content-center">
     <div class="row row-cols-1 row-cols-md-3">
-      <% Booking.where(user_id: current_user).each do |booking| %>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h6 class="card-title"><%= booking.car.model %></h6>
-              <p class="card-text">Starting Date: <%= booking.starting_date %></p>
-              <p class="card-text">Ending Date: <%= booking.ending_date %></p>
-              <span>
-              <h6> Total ($): <%= ((booking.ending_date - booking.starting_date).to_i * booking.car.price)%>.00</h6>
-            </div>
-            <div class="card-footer">
-              <div class="row">
-                <div class="col">
-                  <%= link_to "Delete",
-                        booking_path(booking),
-                        method: :delete,
-                        data: { confirm: "Are you sure do you want to delete your booking?" } %>
-                </div>
-                <div class="col">
-                  <%= link_to "Update",
-                        edit_booking_path(booking),
-                        data: { confirm: "Are you sure do you want to edit your booking?" }%>
+      <div class="cards-container">
+        <% Booking.where(user_id: current_user).each do |booking| %>
+          <div class="col mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="card-title"><%= booking.car.model %></h6>
+                <p class="card-text">Starting Date: <%= booking.starting_date %></p>
+                <p class="card-text">Ending Date: <%= booking.ending_date %></p>
+                <span>
+                <h6> Total ($): <%= ((booking.ending_date - booking.starting_date).to_i * booking.car.price)%>.00</h6>
+              </div>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col">
+                    <%= link_to "Delete",
+                          booking_path(booking),
+                          method: :delete,
+                          data: { confirm: "Are you sure do you want to delete your booking?" } %>
+                  </div>
+                  <div class="col">
+                    <%= link_to "Update",
+                          edit_booking_path(booking),
+                          data: { confirm: "Are you sure do you want to edit your booking?" }%>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="row justify-content-center">
     <%= link_to 'Back to cars', cars_path , class: "btn btn-gradient"%>
-  </div>
-  <div class="col">
-    <%= link_to "PDF", booking_path(@booking, format: :pdf) %>
-  </div>
+    <%= link_to "PDF", booking_path(@booking, format: :pdf), class: "btn btn-gradient" %>
 </div>
