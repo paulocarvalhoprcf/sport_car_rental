@@ -36,6 +36,9 @@ gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 
 gem 'validates_timeliness', '~> 6.0.0.alpha1'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 
 
 group :development, :test do

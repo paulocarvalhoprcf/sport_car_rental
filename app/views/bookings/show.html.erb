@@ -43,4 +43,7 @@
   <div class="row justify-content-center">
     <%= link_to 'Back to cars', cars_path , class: "btn btn-gradient"%>
   </div>
+  <div class="col">
+    <%= link_to "PDF", booking_path(@booking, format: :pdf) %>
+  </div>
 </div>

@@ -11,6 +11,13 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Booking: #{@booking}", template: 'bookings/show.html.erb'   # Excluding ".pdf" extension.
+      end
+    end
   end
 
   def new
