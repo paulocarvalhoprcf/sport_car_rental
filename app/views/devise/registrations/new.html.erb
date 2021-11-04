@@ -25,6 +25,10 @@
       <div class="row justify-content-center">
         <%= f.button :submit, "Sign up", class: "btn btn-gradient" %>
       </div>
+      <span></span>
+      <div class='text-center'>
+        <%= link_to "Log in", new_session_path(resource_name)%>
+      </div>
     <% end %>
   </div>
 </div>
