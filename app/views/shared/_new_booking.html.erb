@@ -1,9 +1,9 @@
 <br>
 <%= simple_form_for [ @car, @booking ] do |f| %>
   <div class="form-inline justify-items-center">
-    <%= f.input :starting_date %>
+    <%= f.input :starting_date, as: :date, html5: true %>
     <span></span>
-    <%= f.input :ending_date %>
+    <%= f.input :ending_date, as: :date, html5: true %>
   </div>
   <br>
   <div class="d-flex justify-content-center">
